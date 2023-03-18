@@ -1,0 +1,8 @@
+.Main {
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    overflow-y: auto ;	
+}
+.Routing{
+    height:100%; 
+}

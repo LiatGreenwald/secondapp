@@ -1,0 +1,7 @@
+.Header {
+	background-color: var(--background-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

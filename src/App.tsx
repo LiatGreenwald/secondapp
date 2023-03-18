@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
+import './App.css';
+import Footer from './Components/Layout/Footer/Footer';
+import Header from './Components/Layout/Header/Header';
+import Main from './Components/Layout/Main/Main';
+import Menu from './Components/Layout/Menu/Menu';
+
+type Theme = 'light' |'dark';
 function App() {
+  const[theme,setTheme]=useState<Theme>('light');
+  const changeTheme =()=>{
+    if(theme==='light'){
+      setTheme('dark');
+          }
+          else{
+            setTheme('light');
+          }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className= {`App ${theme}`}>
+    <button onClick={changeTheme}>{theme==='dark'?'🌕 ' :'🌚'}</button>
+     
+      <Header/>
+      <Menu/>
+      <Main/>
+      <Footer/>
     </div>
   );
 }
